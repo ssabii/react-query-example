@@ -1,7 +1,16 @@
 import React from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+import UserList from './components/UserList'
+
+const queryClient = new QueryClient()
 
 function App() {
-  return <div className="App">App</div>
+  return (
+    <QueryClientProvider client={queryClient}>
+      <UserList />
+    </QueryClientProvider>
+  )
 }
 
 export default App
