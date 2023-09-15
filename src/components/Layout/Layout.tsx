@@ -7,7 +7,9 @@ const Layout = () => {
   return (
     <Container>
       <SideNav />
-      <Outlet />
+      <Main>
+        <Outlet />
+      </Main>
     </Container>
   )
 }
@@ -15,6 +17,13 @@ const Layout = () => {
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+`
+
+const Main = styled.main`
+  width: calc(100% - 240px);
+  height: 100%;
+  margin-left: 240px;
+  padding: 24px;
 `
 
 export default Layout

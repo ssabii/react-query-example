@@ -14,8 +14,10 @@ const SideNav = () => {
 }
 
 const Nav = styled.nav`
+  position: fixed;
   width: 240px;
   height: 100%;
+  margin: 0;
   padding: 24px;
   border-right: 1px solid rgb(229 231 235);
 `
