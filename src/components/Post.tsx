@@ -11,10 +11,7 @@ interface PostProps {
 const Post = ({ postId }: PostProps) => {
   const { data, status, isLoading, isFetching } = useQuery(
     ['post', postId],
-    async () => {
-      const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-      return data;
-    }
+    () => fetchPost(postId),
   )
 
   return (
@@ -34,6 +31,12 @@ const Post = ({ postId }: PostProps) => {
       <Text>{JSON.stringify(data)}</Text>
     </>
   )
+}
+
+const fetchPost = async (postId: number) => {
+  const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+
+  return data;
 }
 
 

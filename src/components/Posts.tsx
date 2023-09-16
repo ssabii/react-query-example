@@ -7,10 +7,7 @@ import Text from './Text';
 const Posts = () => {
   const { data, status, isLoading, isFetching, fetchStatus } = useQuery(
     ['posts'],
-    async () => {
-      const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
-      return data;
-    },
+    fetchPosts,
   )
 
   return (
@@ -35,5 +32,12 @@ const Posts = () => {
     </>
   )
 }
+
+const fetchPosts = async () => {
+  const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+
+  return data;
+}
+
 
 export default Posts
