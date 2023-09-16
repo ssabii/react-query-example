@@ -1,17 +1,54 @@
 import React from 'react'
+import { NavLink, useLocation, Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const SideNav = () => {
+  const { pathname } = useLocation();
+
   return (
     <Nav>
       <Ul>
-        <Li>Post 1</Li>
-        <Li>Post 2</Li>
-        <Li>Post 3</Li>
+        {menus.map(({ name, to }) => (
+          <Li
+            key={to}
+            isActive={pathname === to}
+          >
+            <Link
+              to={to}
+              style={{
+                display: 'block',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              {name}
+            </Link>
+          </Li>
+        ))}
       </Ul>
-    </Nav>
+    </Nav >
   )
 }
+
+interface Menu {
+  name: string
+  to: string
+}
+
+const menus: Menu[] = [
+  {
+    name: 'fetch post 1',
+    to: '/post-1'
+  },
+  {
+    name: 'fetch post 2',
+    to: '/post-2'
+  },
+  {
+    name: 'fetch post 3',
+    to: '/post-3'
+  }
+]
 
 const Nav = styled.nav`
   position: fixed;
@@ -25,11 +62,14 @@ const Nav = styled.nav`
 const Ul = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 8px;
   list-style: none;
 `
 
-const Li = styled.li`
+const Li = styled.li<{ isActive?: boolean }>`
+  padding: 8px;
+  color: ${({ isActive }) => isActive ? 'rgb(79 70 229)' : 'black'};
+  background-color: ${({ isActive }) => isActive ? 'rgb(249 250 251)' : 'transparent'};
+  border-radius: 8px;
   font-weight: 600;
 `;
 
