@@ -1,8 +1,8 @@
 import React from 'react'
-import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 import Field from './Field';
 import Text from './Text';
+import { fetchPosts } from 'api/post';
 
 const PostsReactQuery = () => {
   const { data, status, isLoading, isFetching, fetchStatus } = useQuery(
@@ -32,19 +32,5 @@ const PostsReactQuery = () => {
     </>
   )
 }
-
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
-
-const fetchPosts = async () => {
-  const { data } = await axios.get<Post[]>(`https://jsonplaceholder.typicode.com/posts`)
-
-  return data;
-}
-
 
 export default PostsReactQuery
