@@ -19,7 +19,7 @@ const ConditionPosts = () => {
 
 const Buttons = styled.div`
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   gap: 8px;
 `
 

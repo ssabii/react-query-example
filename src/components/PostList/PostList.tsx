@@ -18,6 +18,7 @@ const PostList = ({ posts }: PostListProps) => {
 }
 
 const List = styled.div`
+  margin-top: 16px;
   border: 1px solid rgb(226 232 240);
   border-radius: 8px;
 `
