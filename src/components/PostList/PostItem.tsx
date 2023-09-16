@@ -21,6 +21,7 @@ const Container = styled.div`
 
 const Title = styled.div`
   color: rgb(17 24 39);
+  font-size: 18px;
   font-weight: 600;
 `;
 

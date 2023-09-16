@@ -25,6 +25,7 @@ const Container = styled.div`
 
 const Label = styled.div`
   color: rgb(17 24 39);
+  font-weight: 600;
 `
 
 export default Field;

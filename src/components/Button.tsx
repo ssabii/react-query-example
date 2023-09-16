@@ -6,6 +6,7 @@ const Button = styled.button`
   background-color: rgb(79 70 229);
   border: none;
   border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
 
   &:hover {

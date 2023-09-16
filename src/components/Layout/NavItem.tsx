@@ -31,6 +31,7 @@ const Li = styled.li<{ $active: boolean }>`
   color: ${({ $active: active }) => active ? 'rgb(79 70 229)' : 'black'};
   background-color: ${({ $active: active }) => active ? 'rgb(249 250 251)' : 'transparent'};
   border-radius: 8px;
+  font-size: 18px;
   font-weight: 600;
 `;
 
