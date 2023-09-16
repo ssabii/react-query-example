@@ -8,7 +8,6 @@ interface PostListProps {
 }
 
 const PostList = ({ posts }: PostListProps) => {
-  console.log(posts);
   return (
     <List>
       {posts?.map((post) => (
