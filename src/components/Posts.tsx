@@ -1,20 +1,16 @@
 import React from 'react'
 import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
-import Field from './Field'
-import Text from './Text'
+import Field from './Field';
+import Text from './Text';
 
-interface PostProps {
-  postId: number
-}
-
-const Post = ({ postId }: PostProps) => {
-  const { data, status, isLoading, isFetching } = useQuery(
-    ['post', postId],
+const Posts = () => {
+  const { data, status, isLoading, isFetching, fetchStatus } = useQuery(
+    ['posts'],
     async () => {
-      const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+      const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
       return data;
-    }
+    },
   )
 
   return (
@@ -28,6 +24,10 @@ const Post = ({ postId }: PostProps) => {
         value={isLoading ? 'true' : 'false'}
       />
       <Field
+        label="fetchStatus"
+        value={fetchStatus}
+      />
+      <Field
         label="isFetching"
         value={isFetching ? 'true' : 'false'}
       />
@@ -36,6 +36,4 @@ const Post = ({ postId }: PostProps) => {
   )
 }
 
-
-
-export default Post
+export default Posts

@@ -24,6 +24,7 @@ const Main = styled.main`
   height: 100%;
   margin-left: 240px;
   padding: 24px;
+  overflow-y: auto;
 `
 
 export default Layout
