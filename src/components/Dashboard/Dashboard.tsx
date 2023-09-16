@@ -8,13 +8,15 @@ interface DashboardProps {
   isLoading: boolean;
   fetchStatus: "fetching" | "paused" | "idle";
   isFetching: boolean;
+  isStale: boolean;
 }
 
 const Dashboard = ({
   status,
   isLoading,
   fetchStatus,
-  isFetching
+  isFetching,
+  isStale
 }: DashboardProps) => {
   return (
     <Container>
@@ -47,6 +49,14 @@ const Dashboard = ({
         value={
           <Badge color={isFetching ? 'info' : 'default'}>
             {isFetching ? "true" : "false"}
+          </Badge>
+        }
+      />
+      <Field
+        label="isStale"
+        value={
+          <Badge color={isStale ? 'warning' : 'default'}>
+            {isStale ? "true" : "false"}
           </Badge>
         }
       />

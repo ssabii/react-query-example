@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 import styled, { css } from 'styled-components';
 
-export type BadgeColor = 'default' | 'primary' | 'success' | 'error' | 'info';
+export type BadgeColor = 'default' | 'primary' | 'success' | 'error' | 'warning' | 'info';
 
 interface BadgeProps {
   color?: BadgeColor;
@@ -42,6 +42,11 @@ const getStyle = (color: BadgeColor) => {
       return css`
         color: rgb(185 28 28);
         background-color: rgb(254 226 226);
+      `;
+    case "warning":
+      return css`
+        color: rgb(133 77 14);
+        background-color: rgb(254 249 195);
       `;
     case "info":
       return css`
