@@ -11,7 +11,7 @@ const NavItem = ({ name, to }: NavItemProps) => {
   const { pathname } = useLocation();
 
   return (
-    <Li active={pathname === to}>
+    <Li $active={pathname === to}>
       <Link
         to={to}
         style={{
@@ -26,10 +26,10 @@ const NavItem = ({ name, to }: NavItemProps) => {
   )
 }
 
-const Li = styled.li<{ active?: boolean }>`
+const Li = styled.li<{ $active: boolean }>`
   padding: 8px;
-  color: ${({ active }) => active ? 'rgb(79 70 229)' : 'black'};
-  background-color: ${({ active }) => active ? 'rgb(249 250 251)' : 'transparent'};
+  color: ${({ $active: active }) => active ? 'rgb(79 70 229)' : 'black'};
+  background-color: ${({ $active: active }) => active ? 'rgb(249 250 251)' : 'transparent'};
   border-radius: 8px;
   font-weight: 600;
 `;
