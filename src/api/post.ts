@@ -8,8 +8,7 @@ export interface Post {
 }
 
 export const fetchPost = async (postId: number) => {
-  const { data } = await axios.get<Post[]>(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-
+  const { data } = await axios.get<Post>(`https://jsonplaceholder.typicode.com/posts/${postId}`)
   return data;
 }
 

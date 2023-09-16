@@ -1,8 +1,8 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import Field from './Field'
-import Text from './Text'
 import { fetchPost } from 'api/post'
+import PostList from './PostList'
 
 interface PostProps {
   postId: number
@@ -13,6 +13,8 @@ const PostReactQuery = ({ postId }: PostProps) => {
     ['post', postId],
     () => fetchPost(postId),
   )
+
+  const posts = data ? [data] : undefined
 
   return (
     <>
@@ -28,7 +30,7 @@ const PostReactQuery = ({ postId }: PostProps) => {
         label="isFetching"
         value={isFetching ? 'true' : 'false'}
       />
-      <Text>{JSON.stringify(data)}</Text>
+      <PostList posts={posts} />
     </>
   )
 }
