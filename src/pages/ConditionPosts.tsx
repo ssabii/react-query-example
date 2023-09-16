@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from 'components/Button';
-import Posts from 'components/Posts';
+import PostsReactQuery from 'components/PostsReactQuery';
 import styled from 'styled-components';
 
 const ConditionPosts = () => {
@@ -12,7 +12,7 @@ const ConditionPosts = () => {
         <Button onClick={() => setShow(true)}>show</Button>
         <Button onClick={() => setShow(false)}>hide</Button>
       </Buttons>
-      {show && (<Posts />)}
+      {show && (<PostsReactQuery />)}
     </>
   )
 }

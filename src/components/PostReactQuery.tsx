@@ -8,7 +8,7 @@ interface PostProps {
   postId: number
 }
 
-const Post = ({ postId }: PostProps) => {
+const PostReactQuery = ({ postId }: PostProps) => {
   const { data, status, isLoading, isFetching } = useQuery(
     ['post', postId],
     () => fetchPost(postId),
@@ -33,12 +33,17 @@ const Post = ({ postId }: PostProps) => {
   )
 }
 
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
 const fetchPost = async (postId: number) => {
-  const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+  const { data } = await axios.get<Post[]>(`https://jsonplaceholder.typicode.com/posts/${postId}`)
 
   return data;
 }
 
-
-
-export default Post
+export default PostReactQuery

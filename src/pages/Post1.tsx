@@ -1,6 +1,6 @@
 import React from 'react'
-import Post from 'components/Post'
+import PostReactQuery from 'components/PostReactQuery'
 
-const Post1 = () => <Post postId={1} />
+const Post1 = () => <PostReactQuery postId={1} />
 
 export default Post1

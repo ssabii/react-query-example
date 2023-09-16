@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import Field from './Field';
 import Text from './Text';
 
-const Posts = () => {
+const PostsReactQuery = () => {
   const { data, status, isLoading, isFetching, fetchStatus } = useQuery(
     ['posts'],
     fetchPosts,
@@ -33,11 +33,18 @@ const Posts = () => {
   )
 }
 
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
 const fetchPosts = async () => {
-  const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+  const { data } = await axios.get<Post[]>(`https://jsonplaceholder.typicode.com/posts`)
 
   return data;
 }
 
 
-export default Posts
+export default PostsReactQuery
