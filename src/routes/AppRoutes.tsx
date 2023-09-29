@@ -3,6 +3,7 @@ import ConditionPosts from 'pages/ConditionPosts'
 import Post1 from 'pages/Post1'
 import Post2 from 'pages/Post2'
 import Post3 from 'pages/Post3'
+import QueryOneThousand from 'pages/QueryOneThousand'
 import StaleTimeFiveMinutePosts from 'pages/StaleTimeFiveMinutePosts'
 import { Route, Routes } from 'react-router-dom'
 
@@ -15,6 +16,7 @@ const AppRoutes = () => {
         <Route path="post-3" element={<Post3 />} />
         <Route path="condition-posts" element={<ConditionPosts />} />
         <Route path="staletime-5m-posts" element={<StaleTimeFiveMinutePosts />} />
+        <Route path="query-1000" element={<QueryOneThousand />} />
       </Route>
     </Routes>
   )

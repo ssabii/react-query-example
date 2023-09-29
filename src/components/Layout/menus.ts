@@ -23,6 +23,9 @@ export const menus: Menu[] = [
   {
     name: 'fetch posts staleTime 5m cacheTime 0',
     to: '/staletime-5m-posts'
+  },
+  {
+    name: 'Query 1000',
+    to: '/query-1000'
   }
-
 ]
