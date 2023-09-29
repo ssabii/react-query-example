@@ -1,7 +1,18 @@
+import { useQuery } from '@tanstack/react-query'
+import { fetchPosts } from 'api/post'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
 const NavList: FC = ({ children }) => {
+  useQuery(
+    ['posts'],
+    fetchPosts,
+    {
+      staleTime: 1000 * 60 * 5,
+      cacheTime: 0,
+    }
+  )
+
   return (
     <Nav>
       <Ul>{children}</Ul>

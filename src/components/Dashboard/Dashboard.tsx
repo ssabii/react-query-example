@@ -6,7 +6,6 @@ import Badge, { BadgeColor } from 'components/Badge';
 interface DashboardProps {
   status: "loading" | "error" | "success";
   isLoading: boolean;
-  fetchStatus: "fetching" | "paused" | "idle";
   isFetching: boolean;
   isStale: boolean;
 }
@@ -14,7 +13,6 @@ interface DashboardProps {
 const Dashboard = ({
   status,
   isLoading,
-  fetchStatus,
   isFetching,
   isStale
 }: DashboardProps) => {
@@ -33,14 +31,6 @@ const Dashboard = ({
         value={
           <Badge color={isLoading ? 'info' : 'default'}>
             {isLoading ? "true" : "false"}
-          </Badge>
-        }
-      />
-      <Field
-        label="fetchStatus"
-        value={
-          <Badge color={fetchStatusColorMap[fetchStatus]}>
-            {fetchStatus}
           </Badge>
         }
       />
@@ -68,12 +58,6 @@ const statusColorMap: { [key in string]: BadgeColor } = {
   loading: 'info',
   success: 'success',
   error: 'error',
-}
-
-const fetchStatusColorMap: { [key in string]: BadgeColor } = {
-  fetching: 'info',
-  paused: 'primary',
-  idle: 'default',
 }
 
 const Container = styled.div`

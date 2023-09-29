@@ -19,5 +19,10 @@ export const menus: Menu[] = [
   {
     name: 'fetch condition posts',
     to: '/condition-posts'
+  },
+  {
+    name: 'fetch posts staleTime 5m cacheTime 0',
+    to: '/staletime-5m-posts'
   }
+
 ]

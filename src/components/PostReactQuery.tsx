@@ -7,7 +7,7 @@ import Dashboard from './Dashboard'
 interface PostProps {
   postId: number
 }
-
+  
 const PostReactQuery = ({ postId }: PostProps) => {
   const { data, ...rest } = useQuery(
     ['post', postId],
