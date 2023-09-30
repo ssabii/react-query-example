@@ -1,10 +1,11 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, QueryOptions } from '@tanstack/react-query'
 import { fetchPosts } from 'api/post'
 
-const usePostsQuery = () => {
+const usePostsQuery = (options: QueryOptions = {}) => {
   return useQuery(
     ['posts'],
     fetchPosts,
+    options,
   )
 }
 
