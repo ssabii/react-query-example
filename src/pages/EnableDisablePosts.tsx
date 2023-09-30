@@ -14,7 +14,7 @@ const EnableDisablePosts = () => {
       </Buttons>
       <PostsReactQuery options={{ enabled }} />
     </>
-
+  )
 }
 
 const Buttons = styled.div`

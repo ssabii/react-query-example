@@ -18,7 +18,7 @@ const AppRoutes = () => {
         <Route path="condition-posts" element={<ConditionPosts />} />
         <Route path="staletime-5m-posts" element={<StaleTimeFiveMinutePosts />} />
         <Route path="query-1000" element={<QueryOneThousand />} />
-        <Route path='enable-disable-posts' element={<EnableDisablePosts />}
+        <Route path='enable-disable-posts' element={<EnableDisablePosts />} />
       </Route>
     </Routes>
   )
