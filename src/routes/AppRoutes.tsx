@@ -1,5 +1,6 @@
 import Layout from 'components/Layout'
 import ConditionPosts from 'pages/ConditionPosts'
+import EnableDisablePosts from 'pages/EnableDisablePosts'
 import Post1 from 'pages/Post1'
 import Post2 from 'pages/Post2'
 import Post3 from 'pages/Post3'
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path="condition-posts" element={<ConditionPosts />} />
         <Route path="staletime-5m-posts" element={<StaleTimeFiveMinutePosts />} />
         <Route path="query-1000" element={<QueryOneThousand />} />
+        <Route path='enable-disable-posts' element={<EnableDisablePosts />}
       </Route>
     </Routes>
   )

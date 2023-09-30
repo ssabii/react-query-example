@@ -1,23 +1,17 @@
 import React from 'react'
-import { useQuery } from '@tanstack/react-query'
-import { fetchPosts } from 'api/post';
+import { UseQueryOptions } from '@tanstack/react-query'
+import { Post } from 'api/post';
 import PostList from './PostList';
 import Dashboard from './Dashboard';
+import usePostsQuery from 'hooks/usePostsQuery';
 
 interface PostsReactQueryProps {
-  staleTime?: number;
-  cacheTime?: number;
+  options: UseQueryOptions<Post[]>
 }
 
-const PostsReactQuery = ({ staleTime, cacheTime }: PostsReactQueryProps) => {
-  const { data, ...rest } = useQuery(
-    ['posts'],
-    fetchPosts,
-    {
-      staleTime: staleTime,
-      cacheTime: cacheTime,
-    }
-  )
+
+const PostsReactQuery = ({ options }: PostsReactQueryProps) => {
+  const { data, ...rest } = usePostsQuery(options);
 
   return (
     <>

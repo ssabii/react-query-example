@@ -27,5 +27,9 @@ export const menus: Menu[] = [
   {
     name: 'Query 1000',
     to: '/query-1000'
+  },
+  {
+    name: 'Enable Disable fetch posts',
+    to: '/enable-disable-posts'
   }
 ]
