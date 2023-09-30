@@ -6,7 +6,7 @@ import Dashboard from './Dashboard';
 import usePostsQuery from 'hooks/usePostsQuery';
 
 interface PostsReactQueryProps {
-  options: UseQueryOptions<Post[]>
+  options?: UseQueryOptions<Post[]>
 }
 
 
