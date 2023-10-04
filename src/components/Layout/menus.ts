@@ -25,11 +25,15 @@ export const menus: Menu[] = [
     to: '/staletime-5m-posts'
   },
   {
+    name: 'Enable Disable fetch posts',
+    to: '/enable-disable-posts'
+  },
+  {
     name: 'Query 1000',
     to: '/query-1000'
   },
   {
-    name: 'Enable Disable fetch posts',
-    to: '/enable-disable-posts'
+    name: "Rendering 1000",
+    to: '/rendering-1000'
   }
 ]

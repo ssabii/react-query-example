@@ -1,12 +1,13 @@
+import { Route, Routes } from 'react-router-dom'
 import Layout from 'components/Layout'
-import ConditionPosts from 'pages/ConditionPosts'
-import EnableDisablePosts from 'pages/EnableDisablePosts'
 import Post1 from 'pages/Post1'
 import Post2 from 'pages/Post2'
 import Post3 from 'pages/Post3'
-import QueryOneThousand from 'pages/QueryOneThousand'
+import ConditionPosts from 'pages/ConditionPosts'
 import StaleTimeFiveMinutePosts from 'pages/StaleTimeFiveMinutePosts'
-import { Route, Routes } from 'react-router-dom'
+import QueryOneThousand from 'pages/QueryOneThousand'
+import EnableDisablePosts from 'pages/EnableDisablePosts'
+import RenderingOneThousand from 'pages/RenderingOneThousand'
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
         <Route path="staletime-5m-posts" element={<StaleTimeFiveMinutePosts />} />
         <Route path="query-1000" element={<QueryOneThousand />} />
         <Route path='enable-disable-posts' element={<EnableDisablePosts />} />
+        <Route path="rendering-1000" element={<RenderingOneThousand />} />
       </Route>
     </Routes>
   )
