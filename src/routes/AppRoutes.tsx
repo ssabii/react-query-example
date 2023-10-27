@@ -8,6 +8,7 @@ import StaleTimeFiveMinutePosts from 'pages/StaleTimeFiveMinutePosts'
 import QueryOneThousand from 'pages/QueryOneThousand'
 import EnableDisablePosts from 'pages/EnableDisablePosts'
 import RenderingOneThousand from 'pages/RenderingOneThousand'
+import QueryClient from 'pages/QueryClient'
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="query-1000" element={<QueryOneThousand />} />
         <Route path='enable-disable-posts' element={<EnableDisablePosts />} />
         <Route path="rendering-1000" element={<RenderingOneThousand />} />
+        <Route path="query-client" element={<QueryClient />} />
       </Route>
     </Routes>
   )

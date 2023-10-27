@@ -35,5 +35,9 @@ export const menus: Menu[] = [
   {
     name: "Rendering 1000",
     to: '/rendering-1000'
+  },
+  {
+    name: "Query Client",
+    to: '/query-client'
   }
 ]
